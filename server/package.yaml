@@ -48,7 +48,7 @@ library:
   source-dirs: src
 
 executables:
-  hs-exe:
+  server-exe:
     main:                Main.hs
     source-dirs:         app
     ghc-options:

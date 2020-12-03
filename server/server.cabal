@@ -4,18 +4,17 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 17ec01d547f823bd3e2b570970330a8ca37332e1e49ad46bd6caf09a78a097d4
+-- hash: 17aa8a89b3329737ab31a152e820d821e6476891e88c6ea16748c75924a969fe
 
 name:           server
 version:        0.1.0.0
 description:    Please see the README on GitHub at <https://github.com/githubuser/hs#readme>
-homepage:       https://github.com/githubuser/hs#readme
-bug-reports:    https://github.com/githubuser/hs/issues
+homepage:       https://github.com/githubuser/server#readme
+bug-reports:    https://github.com/githubuser/server/issues
 author:         Author name here
 maintainer:     example@example.com
 copyright:      2020 Author name here
 license:        BSD3
-license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
     README.md
@@ -29,10 +28,9 @@ library
   exposed-modules:
       Encrypt
       Helper
-      Lib
       TLS
   other-modules:
-      Paths_hs
+      Paths_server
   hs-source-dirs:
       src
   default-extensions: Strict StrictData
@@ -59,11 +57,10 @@ library
     , x509
   default-language: Haskell2010
 
-executable hs-exe
+executable server-exe
   main-is: Main.hs
   other-modules:
-      Main
-      Paths_hs
+      Paths_server
   hs-source-dirs:
       app
   default-extensions: Strict StrictData
@@ -78,11 +75,11 @@ executable hs-exe
     , cryptonite
     , data-default-class
     , hourglass
-    , hs
     , memory >=0.15.0
     , mtl
     , network
     , random
+    , server
     , tasty
     , tasty-quickcheck
     , tls >=1.5.2
