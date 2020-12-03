@@ -1,0 +1,59 @@
+name:                server
+version:             0.1.0.0
+github:              "githubuser/server"
+license:             BSD3
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2020 Author name here"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/hs#readme>
+
+dependencies:
+- base >= 4.8 && < 5
+- QuickCheck
+- bytestring
+- word8
+- network
+- data-default-class
+- x509
+- cryptonite
+- hourglass
+- asn1-types
+- async
+- tasty
+- tasty-quickcheck
+- tls >= 1.5.2
+- memory >= 0.15.0
+- mtl
+- random
+- containers
+- warp
+
+default-extensions: Strict StrictData
+
+ghc-options: -O2 -funfolding-use-threshold=16
+
+library:
+  source-dirs: src
+
+executables:
+  hs-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+      - server
